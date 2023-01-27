@@ -11,11 +11,17 @@ public class Main
 	
 	public static void main(String[] args)
 	{
+		
 		System.out.println("Hello world");
 		
-		Dog penny = new Dog();
-		penny.setName("Penny");
-		penny.speak();
+		Cat fluffy = new Cat();
+		fluffy.setName("fluffy");
+		fluffy.setnumLives(9);
+		//System.out.println(ginger.getnumLives());
+		while(fluffy.getnumLives()>0)
+		{
+			fluffy.Kill();
+		}
 	}
 	
 }
