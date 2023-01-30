@@ -18,18 +18,15 @@ public class HelloProcessing extends PApplet
 	
 	public void draw()
 	{	
-		stroke(255); // colour
-		line(10, 10, 100, 100); // draws line (x1, y1, x2, y2)
-		fill(0, 255, 0);
-		circle(300, 250, 70); // creates circle (centreX, centreY, diameter)
-		fill(0, 0, 255); // fills colour
-		rect(10, 300, 10, 100); // rectangle (topleftX, topleftY, width, height)
-		stroke(127); // takes 1 OR 3 parameters this gives colour outline
+		background(255, 0, 0);
+		stroke(0, 0, 0);
+		fill(255, 255, 0);
+		circle(250, 250, 400);
 		fill(0, 255, 255);
-		noStroke(); // turns off drawing round shapes
-		noFill(); // turns off fill
-		strokeWeight(1); // changes the thickness of lines drawn
-		triangle(40, 90, 300, 20, 80, 70); 
-		
+		triangle(250, 0, 40, 400, 460, 400);
+		fill(250);
+		ellipse(250, 200, 200, 120);
+		fill(0, 0, 0);
+		circle(mouseX, mouseY, 90);
 	}
 }
