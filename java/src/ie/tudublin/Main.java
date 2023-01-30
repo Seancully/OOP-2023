@@ -21,6 +21,9 @@ public class Main
 		while(fluffy.getnumLives()>0)
 		{
 			fluffy.Kill();
+
+			helloProcessing();
+
 		}
 	}
 	
