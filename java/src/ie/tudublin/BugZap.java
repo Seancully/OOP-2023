@@ -31,6 +31,7 @@ public class BugZap extends PApplet
 	}
 
 	float x1, y1, x2, y2;
+	float playerX, playerY, playerWidth;
 	float x1dir, x2dir, y1dir, y2dir;
 	float c = 0;
 	
@@ -64,4 +65,25 @@ public class BugZap extends PApplet
 			y2dir = - y2dir;
 		}
 	}
+
+	public void drawPlayer(float x, float y, float w){
+		line(x + 20, x + 20, x - 20, x - 20);
+	}
+
+	public void keyPressed()
+	{
+		if (keyCode == LEFT)
+		{
+			System.out.println("Left arrow pressed");
+		}
+		if (keyCode == RIGHT)
+		{
+			System.out.println("Right arrow pressed");
+		}
+		if (key == ' ')
+		{
+			System.out.println("SPACE key pressed");
+		}
+	}	
+
 }
