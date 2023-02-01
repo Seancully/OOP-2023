@@ -8,18 +8,25 @@ public class HelloProcessing extends PApplet
 	public void settings()
 	{
 		size(700,700);
+		
 	}
 
 	public void setup() {
 		
 	}
 
-	
-	
 	public void draw()
 	{	
-		noStroke();
-		fill(random(255), random(255), random(255));
+		strokeWeight(10);
+		delay(100);
+		fill(0, 255, 255);
 		circle(random(0,width), random(0, width), random(0,width));
+		delay(100);
+		fill(0, 0, 255);
+		circle(random(0,width), random(0, width), random(0,width));
+		delay(100);
+		fill(0, 245, 204);
+		circle(random(0,width), random(0, width), random(0,width));
+
 	}
 }
