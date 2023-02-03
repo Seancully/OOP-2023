@@ -8,16 +8,14 @@ public class BugZap extends PApplet{
 	float bugX, bugY, bugWidth;
 	int score = 0;
 	float halfPlayer, halfBug;
+	float playerSpeed = 7;
 
 	public void settings()
 	{
-
 		size(500, 500);
-
 	}
-
+	
 	public void setup() {
-
 		colorMode(HSB);
 		background(0);
 		smooth();
@@ -28,8 +26,7 @@ public class BugZap extends PApplet{
 
 		playerWidth = 50;
 		halfPlayer = playerWidth * 0.5f;
-		
-
+		resetBug();
 	}
 
 	public void resetBug(){
@@ -37,7 +34,6 @@ public class BugZap extends PApplet{
 		bugWidth = 50;
 		halfBug = bugWidth * 0.5f;
 		bugX = random(halfBug, width - halfBug);
-
 	}
 	
 	void drawPlayer(float x, float y, float w){
@@ -45,33 +41,51 @@ public class BugZap extends PApplet{
 		stroke(255);
 		rectMode(CENTER);
 		rect(x, y, w, w);
-		line(x, y -halfPlayer, x, y - (halfPlayer * 2));
+		line(x, y - halfPlayer, x, y - (halfPlayer * 2));
 	}
 
-	public void draw()
-	{	
+	void drawBug(float x, float y, float w){
+		noFill();
+		stroke(255);
+		rectMode(CENTER);
+		rect(x, y, w, w);
+	}
+
+	public void draw(){	
 		background(0);
+		fill(255);
+		text("Score: " + score, 50, 100);
 		drawPlayer(playerX, playerY, playerWidth);
+		drawBug(bugX, bugY, bugWidth);
+		if(frameCount % 120 == 0){
+			resetBug();
+		}
 	}
-
 
 	public void keyPressed()
 	{
-		if (keyCode == LEFT)
+		if (keyCode == LEFT || key == 'a')
 		{
-			playerX--;
-			System.out.println("Left arrow pressed");
-		}
-		if (keyCode == RIGHT)
+			if(playerX < width + halfPlayer)
+			playerX -= playerSpeed;			
+		} 
+
+		if (keyCode == RIGHT || key == 'd')
 		{
-			playerX++;
-			System.out.println("Right arrow pressed");
+			if (playerX < width - halfPlayer) {
+				playerX += playerSpeed;
+			}				
 		}
+      
 		if (key == ' ')
 		{
+			
 			line(playerX, playerY - halfPlayer, playerX, 0);
-			System.out.println("SPACE key pressed");
+
+			if (playerX > bugX - halfBug && playerX < bugX + halfBug) {
+				score++;
+				resetBug();	
+			}
 		}
 	}	
-
 }
