@@ -57,7 +57,7 @@ public class BugZap extends PApplet{
 		text("Score: " + score, 50, 100);
 		drawPlayer(playerX, playerY, playerWidth);
 		drawBug(bugX, bugY, bugWidth);
-		if(frameCount % 120 == 0){
+		if(frameCount % 200 == 0){
 			resetBug();
 		}
 	}
