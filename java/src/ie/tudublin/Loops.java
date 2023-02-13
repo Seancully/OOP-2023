@@ -8,7 +8,7 @@ public class Loops extends PApplet {
 	int mode = 0;
 
 	public void settings() {
-		size(800, );
+		size(800,800 );
 		//fullScreen(SPAN);
 	}
 
