@@ -21,6 +21,7 @@ public class Loops extends PApplet {
 		println(mode);
 	}
 
+	// offset for colours
 	float off = 0;
 
 	public void draw() {
