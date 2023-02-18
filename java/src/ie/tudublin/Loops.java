@@ -1,18 +1,24 @@
 package ie.tudublin;
 
+import java.util.ArrayList;
 import processing.core.PApplet;
+import processing.data.Table;
+import processing.data.TableRow;
 
 public class Loops extends PApplet {
 
 	int mode = 0;
 
 	public void settings() {
-		size(1000, 1000);
+		size(500, 500);
 		//fullScreen(SPAN);
 	}
 
 	public void setup() {
 		colorMode(HSB);
+        background(0);
+        smooth();
+        border = width * 0.1f;
 	}
 
 	public void keyPressed() {
@@ -21,34 +27,25 @@ public class Loops extends PApplet {
 		println(mode);
 	}
 
-	// offset for colours
-	float off = 0;
+	float border;
 
-	public void draw() {
+	void drawGrid() {
+        stroke(110, 92, 100);
+        textAlign(CENTER, CENTER);
+        textSize(20);
+        for (int i = -5; i <= 5; i++) {
+            float x = map(i, -5, 5, border, width - border);
+            line(x, border, x, height - border);
+            line(border, x, width - border, x);
+            fill(110, 92, 100);
+            text(i, x, border * 0.5f);
+            text(i, border * 0.5f, x);
+        }
+    }
+	
+	public void draw(){
 		background(0);
-		fill(255);
-		noStroke();
-
-		switch (mode) {
-			case 0:
-				int numCircles = (int) max(1, mouseX / 50.0f);
-				float d = width / numCircles;
-				for (int j = 0; j < numCircles; j++) {
-					for (int i = 0; i < numCircles; i++) {
-						float x = (d * 0.5f) + (d * i);
-						float y = (d * 0.5f) + (d * j);
-						float c = ((i + j) / ((numCircles - 1) * 2.0f)) * 255.0f;
-						fill((c + off) % 256, 255, 255);
-						circle(x, y, d);
-					}
-				}
-				off += (mouseY / 50.0f);
-				break;
-			case 1:
-				break;
-			default:
-				break;
-		}
-
+		drawGrid();
 	}
+
 }
