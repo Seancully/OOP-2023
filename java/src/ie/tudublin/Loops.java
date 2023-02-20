@@ -55,11 +55,12 @@ public class Loops extends PApplet {
 	
 			stroke(0);
 			fill(colourVar, 255, 255);
-			rect(x, y, 50, 500);
+			rect(x, y, 50, 50);
 			x += 50;
+			y += 50;
 			colourVar += 25.5;
 
-			
+
 			if (colourVar > 255) {
 
 				colourVar = 0;
