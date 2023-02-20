@@ -44,26 +44,26 @@ public class Loops extends PApplet {
     }
 	
 	float colourVar;
+	int x = 5;
 
-	void rectLoop() {
+	void circleLoop() {
 		int i;
-		int x = 0;
-		int y = 0;
-		int a = 500;
-		int b = 0;
+	
 
 		for ( i = 0; i < 10; i++) {
 	
 			stroke(0);
 			fill(colourVar, 255, 255);
-			rect(x, y, 50, 50);
-			rect(a, b, 50, 50);
-			x += 50;
-			y += 50;
-			a -= 50;
-			b += 50;
+			circle(250, 250, x);
+			
 			colourVar += 25.5;
+			x += 5;
 
+			if (x > 250){
+
+				x = 0;
+
+			}
 
 			if (colourVar > 255) {
 
@@ -77,7 +77,7 @@ public class Loops extends PApplet {
 
 	public void draw(){
 		background(0);
-		rectLoop();
+		circleLoop();
 	}
 
 }
