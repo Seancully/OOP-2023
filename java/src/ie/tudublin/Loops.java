@@ -49,15 +49,19 @@ public class Loops extends PApplet {
 		int i;
 		int x = 0;
 		int y = 0;
-
+		int a = 500;
+		int b = 0;
 
 		for ( i = 0; i < 10; i++) {
 	
 			stroke(0);
 			fill(colourVar, 255, 255);
 			rect(x, y, 50, 50);
+			rect(a, b, 50, 50);
 			x += 50;
 			y += 50;
+			a -= 50;
+			b += 50;
 			colourVar += 25.5;
 
 
