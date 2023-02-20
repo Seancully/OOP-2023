@@ -43,9 +43,36 @@ public class Loops extends PApplet {
         }
     }
 	
+	float colourVar;
+
+	void rectLoop() {
+		int i;
+		int x = 0;
+		int y = 0;
+
+
+		for ( i = 0; i < 10; i++) {
+	
+			stroke(0);
+			fill(colourVar, 255, 255);
+			rect(x, y, 50, 500);
+			x += 50;
+			colourVar += 25.5;
+
+			
+			if (colourVar > 255) {
+
+				colourVar = 0;
+
+			}
+
+		}
+
+	}
+
 	public void draw(){
 		background(0);
-		drawGrid();
+		rectLoop();
 	}
 
 }
