@@ -1,9 +1,13 @@
 package ie.tudublin;
 
+import javax.sound.sampled.LineEvent;
+
 import processing.core.PApplet;
 
 public class Life extends PApplet
 {
+
+	LifeBoard board;
 
 	public void settings()
 	{
@@ -11,10 +15,10 @@ public class Life extends PApplet
 	}
 
 	public void setup() {
-		colorMode(HSB);
+		colorMode(RGB);
 		background(0);
-
-		
+		board = new LifeBoard(100, this);
+		board.randomise();
 		
 	}
 
@@ -22,6 +26,7 @@ public class Life extends PApplet
 	
 	public void draw()
 	{	
-		
+		background(0);
+		board.render(); // draws lifeboard to screen
 	}
 }
