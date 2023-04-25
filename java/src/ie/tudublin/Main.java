@@ -27,6 +27,12 @@ public class Main
         processing.core.PApplet.runSketch( a, new StarMap());
     }
 
+	public static void CAtestPractice()
+	{
+		String[] a = {"MAIN"};
+		processing.core.PApplet.runSketch( a, new CAtestPractice());
+	}
+
 	public static void audio1()
 	{
 		String[] a = {"MAIN"};
@@ -59,13 +65,7 @@ public class Main
 	
 	public static void main(String[] args)
 	{
-		System.out.println("Hello world");
-		
-		Dog penny = new Dog();
-		penny.setName("Penny");
-		penny.speak();
-
-		yasc();
+		CAtestPractice();
 	}
 	
 }
